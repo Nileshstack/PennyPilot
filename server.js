@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const morgan= require('morgan')
 const dotenv = require('dotenv')
-const { default: connectDB } = require('./config/db')
+const connectDB = require('./config/db')
 const path = require('path')
 dotenv.config()
 connectDB();
