@@ -5,19 +5,18 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const path = require('path');
 
-
 dotenv.config();
 connectDB();
 
 const app = express();
 
-
 const allowedOrigins = [
-  'https://pennypilot-e0uu.onrender.com',  
+  'https://pennypilot-e0uu.onrender.com',
   'http://localhost:3000'
 ];
 
-app.use(cors({
+// ✅ CORS middleware
+const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
@@ -26,9 +25,14 @@ app.use(cors({
     }
   },
   credentials: true,
-}));
+};
 
-// Middleware
+app.use(cors(corsOptions));
+
+// ✅ Handle preflight requests
+app.options('*', cors(corsOptions));
+
+// Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
 
