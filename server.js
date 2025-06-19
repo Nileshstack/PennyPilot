@@ -13,8 +13,8 @@ const app = express();
 
 
 const allowedOrigins = [
-  'https://pennypilot-c2hj.onrender.com',  
-  'http://localhost:3000'                  
+  'https://pennypilot-e0uu.onrender.com',  
+  'http://localhost:3000'
 ];
 
 app.use(cors({
