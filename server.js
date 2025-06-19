@@ -11,7 +11,7 @@ connectDB();
 const app = express();
 
 const allowedOrigins = [
-  'https://pennypilot-e0uu.onrender.com',
+  'https://pennypilot-jlfq.onrender.com',  // ✅ New frontend
   'http://localhost:3000'
 ];
 
